@@ -1,0 +1,142 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tau Ceti Federation - Rejoignez l'Histoire</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- TCF Theme -->
+    <link rel="stylesheet" type="text/css" href="{% static 'allianceauth/css/tcf-theme.css' %}">
+</head>
+<body>
+    <div class="tcf-landing">
+        <!-- Header TCF propre (sans menu AllianceAuth) -->
+        <div class="tcf-header">
+            <div class="container">
+                <div class="tcf-brand-container">
+                    <img src="{% static 'allianceauth/images/alliance-logo.png' %}" 
+                         alt="TCF Logo" 
+                         class="tcf-logo"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="tcf-logo-fallback">TCF</div>
+                    <div class="tcf-brand-text">
+                        <span class="tcf-title">Tau Ceti Federation</span>
+                        <span class="tcf-subtitle">Une légende renaît • New Eden • 2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <main class="tcf-main-content">
+            <div class="tcf-hero-section">
+                <h1 class="tcf-hero-title">Rejoignez l'Histoire</h1>
+                <p class="tcf-hero-description">
+                    Tau Ceti Federation revient dans New Eden. Cette alliance légendaire, pionnière des 
+                    organisations francophones dans EVE Online depuis 2006, ouvre ses portes à une nouvelle 
+                    génération de pilotes prêts à écrire l'avenir.
+                </p>
+
+                <div class="tcf-stats-grid">
+                    <div class="tcf-stat-card">
+                        <span class="tcf-stat-number">2006</span>
+                        <span class="tcf-stat-label">Fondation</span>
+                    </div>
+                    <div class="tcf-stat-card">
+                        <span class="tcf-stat-number">1300</span>
+                        <span class="tcf-stat-label">Pilotes F-TE1T</span>
+                    </div>
+                    <div class="tcf-stat-card">
+                        <span class="tcf-stat-number">8</span>
+                        <span class="tcf-stat-label">Années Active</span>
+                    </div>
+                    <div class="tcf-stat-card">
+                        <span class="tcf-stat-number">5</span>
+                        <span class="tcf-stat-label">Régions</span>
+                    </div>
+                </div>
+
+                <div class="tcf-history-section">
+                    <h3 class="tcf-history-title">Un Héritage Légendaire</h3>
+                    <p class="tcf-history-text">
+                        Membre fondateur de RedSwarm Federation aux côtés de Goonswarm et Red Alliance, 
+                        TCF a participé à la Grande Guerre (2007-2009), le conflit le plus important de 
+                        l'histoire d'EVE Online. De la bataille historique de F-TE1T avec 1 300 pilotes 
+                        au contrôle de Deklein, notre alliance a forgé l'histoire de New Eden.
+                    </p>
+                    
+                    <div class="tcf-corps-list">
+                        <div class="tcf-corps-title">Corporations Historiques</div>
+                        <div class="tcf-corps-names">
+                            Le Cercle • Epsilon Lyr • Blue Sun • Nemesis • Alcatraz Inc. • Section XIII • Foundation Cutting-Edge
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tcf-registration-form">
+                <h3 class="tcf-form-title">Connexion Pilote</h3>
+                
+                <a href="{% url 'auth_sso_login' %}" class="tcf-eve-sso-button">
+                    🚀 Connexion EVE Online SSO
+                </a>
+
+                <div class="tcf-login-info">
+                    <p>
+                        Connectez-vous avec votre compte EVE Online pour accéder au portail de l'alliance 
+                        et soumettre votre candidature.
+                    </p>
+                    <ul class="tcf-benefits-list">
+                        <li>Accès aux outils de l'alliance</li>
+                        <li>Calendrier des opérations</li>
+                        <li>Communications sécurisées</li>
+                        <li>Gestion des doctrines</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer optionnel -->
+        <footer class="tcf-footer">
+            <div class="container text-center">
+                <p class="tcf-footer-text">
+                    © 2025 Tau Ceti Federation • EVE Online et tous les éléments associés sont des marques de CCP hf.
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const statCards = document.querySelectorAll('.tcf-stat-card');
+            const historySection = document.querySelector('.tcf-history-section');
+            
+            statCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+            
+            if (historySection) {
+                historySection.style.opacity = '0';
+                historySection.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    historySection.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    historySection.style.opacity = '1';
+                    historySection.style.transform = 'translateY(0)';
+                }, statCards.length * 200 + 300);
+            }
+        });
+    </script>
+</body>
+</html>

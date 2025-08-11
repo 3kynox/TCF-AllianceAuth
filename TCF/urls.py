@@ -1,11 +1,10 @@
-from allianceauth import urls
-from django.urls import include, path
+from django.urls import re_path, include
+from django.contrib import admin
+import allianceauth.urls
 
 urlpatterns = [
-    path('', include(urls)),
+    # Admin
+    re_path(r'^admin/', admin.site.urls),
+    # AllianceAuth URLs (toutes les routes originales)
+    re_path(r'', include(allianceauth.urls)),
 ]
-
-handler500 = 'allianceauth.views.Generic500Redirect'
-handler404 = 'allianceauth.views.Generic404Redirect'
-handler403 = 'allianceauth.views.Generic403Redirect'
-handler400 = 'allianceauth.views.Generic400Redirect'

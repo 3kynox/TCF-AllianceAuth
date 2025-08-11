@@ -30,7 +30,7 @@ CSRF_TRUSTED_ORIGINS = [SITE_URL]
 
 # Change this to enable/disable debug mode, which displays
 # useful error messages but can leak sensitive data.
-DEBUG = False
+DEBUG = True
 
 # Add any additional apps to this list.
 INSTALLED_APPS += [
@@ -79,7 +79,7 @@ ESI_API_URL = "https://esi.evetech.net"
 # Set the default from email to something like 'noreply@example.com'
 # Email validation can be turned off by uncommenting the line below. This can break some services.
 # REGISTRATION_VERIFY_EMAIL = False
-TEMPLATES[0]['DIRS'].insert(0, '/home/allianceserver/TCF/templates')
+TEMPLATES[0]['DIRS'].insert(0, '/home/allianceserver/TCF/TCF/templates')
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'localhost'
 EMAIL_PORT = 25

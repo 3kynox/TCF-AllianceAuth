@@ -1,0 +1,9 @@
+/* Fix global pour supprimer les glyphicons Bootstrap 3 */
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: none !important;
+}
+
+.glyphicon {
+    display: none !important;
+}

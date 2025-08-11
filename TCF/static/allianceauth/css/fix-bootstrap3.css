@@ -1,0 +1,48 @@
+/* Fix Bootstrap 3 glyphicons - Suppression des références obsolètes */
+
+/* Supprimer toutes les références aux glyphicons */
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  /* Vide - on ne charge plus ces fonts */
+}
+
+.glyphicon {
+  /* Réinitialiser les styles glyphicons */
+  font-family: inherit !important;
+}
+
+.glyphicon:before {
+  /* Supprimer le contenu des glyphicons */
+  content: "" !important;
+}
+
+/* Remplacement par Font Awesome pour les icônes communes */
+.glyphicon-search:before {
+  font-family: "Font Awesome 6 Free";
+  content: "\f002";
+  font-weight: 900;
+}
+
+.glyphicon-user:before {
+  font-family: "Font Awesome 6 Free";
+  content: "\f007";
+  font-weight: 900;
+}
+
+.glyphicon-cog:before {
+  font-family: "Font Awesome 6 Free";
+  content: "\f013";
+  font-weight: 900;
+}
+
+.glyphicon-home:before {
+  font-family: "Font Awesome 6 Free";
+  content: "\f015";
+  font-weight: 900;
+}
+
+/* Supprimer les erreurs de chargement en CSS */
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: none;
+}
