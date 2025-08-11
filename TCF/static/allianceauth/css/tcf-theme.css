@@ -402,3 +402,69 @@ a:hover {
     font-size: 12px;
     margin: 0;
 }
+
+/* Background principal avec site_shot1.jpg */
+.tcf-hero-bg {
+    background-image: url('../images/site_shot1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.tcf-hero-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(26, 31, 26, 0.8);
+    z-index: 1;
+}
+
+.tcf-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Images de contenu */
+.tcf-feature-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid var(--tcf-border);
+    margin-bottom: 16px;
+    transition: transform 0.3s ease;
+}
+
+.tcf-feature-image:hover {
+    transform: scale(1.02);
+}
+
+/* Sections avec images */
+.tcf-gallery-section {
+    margin: 32px 0;
+    padding: 24px;
+    background: rgba(96, 139, 78, 0.1);
+    border: 1px solid var(--tcf-border);
+    border-radius: 12px;
+    backdrop-filter: blur(2px);
+}
+
+/* Responsive pour les grilles d'images */
+@media (max-width: 768px) {
+    .tcf-gallery-section > div[style*="grid-template-columns"] {
+        display: block !important;
+    }
+    
+    .tcf-feature-image {
+        height: 150px;
+        margin: 16px 0;
+    }
+    
+    .tcf-hero-bg {
+        background-attachment: scroll;
+    }
+}

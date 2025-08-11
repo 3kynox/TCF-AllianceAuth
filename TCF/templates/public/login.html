@@ -4,18 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tau Ceti Federation - Rejoignez l'Histoire</title>
+    <title>Tau Ceti Federation - Une Alliance qui </title>
     
-    <!-- Bootstrap CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    
-    <!-- TCF Theme -->
     <link rel="stylesheet" type="text/css" href="{% static 'allianceauth/css/tcf-theme.css' %}">
 </head>
 <body>
-    <div class="tcf-landing">
-        <!-- Header TCF propre (sans menu AllianceAuth) -->
+    <div class="tcf-landing tcf-hero-bg">
+        <!-- Header -->
         <div class="tcf-header">
             <div class="container">
                 <div class="tcf-brand-container">
@@ -26,53 +23,104 @@
                     <div class="tcf-logo-fallback">TCF</div>
                     <div class="tcf-brand-text">
                         <span class="tcf-title">Tau Ceti Federation</span>
-                        <span class="tcf-subtitle">Une légende renaît • New Eden • 2025</span>
+                        <span class="tcf-subtitle">Une légende renaît de ses cendres • New Eden • 2025</span>
                     </div>
                 </div>
             </div>
         </div>
 
-        <main class="tcf-main-content">
+        <main class="tcf-main-content tcf-hero-content">
             <div class="tcf-hero-section">
-                <h1 class="tcf-hero-title">Rejoignez l'Histoire</h1>
+                <h1 class="tcf-hero-title">Rejoignez Nous !</h1>
                 <p class="tcf-hero-description">
-                    Tau Ceti Federation revient dans New Eden. Cette alliance légendaire, pionnière des 
-                    organisations francophones dans EVE Online depuis 2006, ouvre ses portes à une nouvelle 
-                    génération de pilotes prêts à écrire l'avenir.
+                    Tau Ceti Federation revient dans New Eden. Cette alliance historique, 
+                    pionnière dès les premières années de EVE Online depuis 2006, ouvre ses portes à une nouvelle 
+                    génération de pilotes prêts à écrire de nouveau une nouvelle page de l'histoire.
                 </p>
 
                 <div class="tcf-stats-grid">
                     <div class="tcf-stat-card">
                         <span class="tcf-stat-number">2006</span>
-                        <span class="tcf-stat-label">Fondation</span>
+                        <span class="tcf-stat-label">Fondation.</span>
                     </div>
                     <div class="tcf-stat-card">
-                        <span class="tcf-stat-number">1300</span>
-                        <span class="tcf-stat-label">Pilotes F-TE1T</span>
+                        <span class="tcf-stat-number">2014</span>
+                        <span class="tcf-stat-label">Réorganisation de l'alliance avec FDTN, Section XIII, Scorpions du Désert, ...</span>
                     </div>
                     <div class="tcf-stat-card">
-                        <span class="tcf-stat-number">8</span>
-                        <span class="tcf-stat-label">Années Active</span>
+                        <span class="tcf-stat-number">2020</span>
+                        <span class="tcf-stat-label">Association avec Valente et La Ligue des mondes libres.</span>
                     </div>
                     <div class="tcf-stat-card">
-                        <span class="tcf-stat-number">5</span>
-                        <span class="tcf-stat-label">Régions</span>
+                        <span class="tcf-stat-number">2025</span>
+                        <span class="tcf-stat-label">De nos jours, pas mal d'anciens pilotes sont de retour pour cet ultime retour.</span>
+                    </div>
+                </div>
+
+                <!-- Section -->
+                <div class="tcf-gallery-section">
+                    <h3 class="tcf-history-title">Nouveaux Défis</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 300px; gap: 20px; align-items: start;">
+                        <div>
+                            <p class="tcf-history-text">
+                                New Eden a évolué depuis nos dernière campagne...
+                            </p>
+                            <p class="tcf-history-text">
+                                Nos pilotes vétérans sont prêts à affronter ces nouveaux défis avec 
+                                l'expertise forgée dans les guerres d'antan.
+                            </p>
+                        </div>
+                        <img src="{% static 'allianceauth/images/Triglavian.jpg' %}" 
+                             alt="Triglavian Forces" 
+                             class="tcf-feature-image">
                     </div>
                 </div>
 
                 <div class="tcf-history-section">
                     <h3 class="tcf-history-title">Un Héritage Légendaire</h3>
                     <p class="tcf-history-text">
+                        L'alliance Tau Ceti Federation (TCF) est née au printemps 2006 de la fusion de 
+                        plusieurs corporations en six grandes corporations. L'alliance a été lancée lorsque 
+                        la communauté française d'EVE s'est regroupée sous un même nom. L'objectif de l'alliance 
+                        est d'unir la passion des francophones et de la transformer en objectifs et activités communes.<br><br>
+
                         Membre fondateur de RedSwarm Federation aux côtés de Goonswarm et Red Alliance, 
                         TCF a participé à la Grande Guerre (2007-2009), le conflit le plus important de 
                         l'histoire d'EVE Online. De la bataille historique de F-TE1T avec 1 300 pilotes 
-                        au contrôle de Deklein, notre alliance a forgé l'histoire de New Eden.
+                        au contrôle de Deklein, notre alliance a forgé l'histoire de New Eden.<br><br>
+
+                        Initialement basée dans les régions septentrionales de la galaxie EVE, la Fédération 
+                        Tau Ceti était active dans les systèmes Venal et Tribute. Elle a subi les attaques de 
+                        Dusk and Dawn (D2) et de ses alliés, en raison de ses liens amicaux avec les alliances 
+                        du Sud et de ses agressions contre les alliances de Tribute, alors qu'elle combattait 
+                        l'alliance Goon avec D2 dans Cloud Ring.
                     </p>
                     
                     <div class="tcf-corps-list">
                         <div class="tcf-corps-title">Corporations Historiques</div>
                         <div class="tcf-corps-names">
-                            Le Cercle • Epsilon Lyr • Blue Sun • Nemesis • Alcatraz Inc. • Section XIII • Foundation Cutting-Edge
+                            Le Cercle • Epsilon Lyr • Blue Sun • Nemesis • Alcatraz Inc. • Section XIII • Foundation Cutting-Edge • La League • Les Scorpions du Désert
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section -->
+                <div class="tcf-gallery-section">
+                    <h3 class="tcf-history-title">Opportunités & Carrières</h3>
+                    <div style="display: grid; grid-template-columns: 300px 1fr; gap: 20px; align-items: start;">
+                        <img src="{% static 'allianceauth/images/Freelance-jobs.jpg' %}" 
+                             alt="Freelance Opportunities" 
+                             class="tcf-feature-image">
+                        <div>
+                            <p class="tcf-history-text">
+                                TCF offre des opportunités variées à ses membres : exploration, 
+                                mining, manufacturing, PvP, et missions diplomatiques. Chaque pilote 
+                                peut trouver sa voie dans notre organisation.
+                            </p>
+                            <p class="tcf-history-text">
+                                De freelance indépendant à amiral de flotte, votre carrière n'a 
+                                de limite que votre ambition et votre dévouement à l'alliance.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -100,7 +148,7 @@
             </div>
         </main>
 
-        <!-- Footer optionnel -->
+        <!-- Footer -->
         <footer class="tcf-footer">
             <div class="container text-center">
                 <p class="tcf-footer-text">
