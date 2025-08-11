@@ -1,0 +1,11 @@
+# .gitignore à la racine du projet
+.env
+.env.local
+.env.production
+*.log
+__pycache__/
+*.pyc
+.DS_Store
+.vscode/settings.json
+local_settings.py
+
