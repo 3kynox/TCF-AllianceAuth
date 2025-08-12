@@ -88,7 +88,7 @@ body {
     margin: 0 auto;
     padding: 40px 20px;
     display: grid;
-    grid-template-columns: 1fr 400px;
+    grid-template-columns: 1fr 360px;
     gap: 40px;
     align-items: start;
 }
@@ -146,14 +146,16 @@ body {
     margin-top: 4px;
 }
 
-/* === Section historique === */
-.tcf-history-section {
+/* === Section historique ET galerie === */
+.tcf-history-section,
+.tcf-gallery-section {
     background: linear-gradient(135deg, rgba(96, 139, 78, 0.15) 0%, rgba(86, 182, 194, 0.1) 100%);
     border: 1px solid var(--tcf-border);
     border-radius: 12px;
     padding: 24px;
     margin: 32px 0;
     backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
 }
 
 .tcf-history-title {
@@ -193,8 +195,9 @@ body {
     border-radius: 16px;
     padding: 32px;
     backdrop-filter: blur(5px);
-    position: sticky;
-    top: 20px;
+    -webkit-backdrop-filter: blur(5px);
+    position: static;
+    margin-top: 20px;
 }
 
 .tcf-form-title {
@@ -335,12 +338,14 @@ a:hover {
     border-color: var(--tcf-green-light);
 }
 
-/* Header personnalisé pour la landing page */
+/* === Header personnalisé pour la landing page === */
 .tcf-header {
-    background: var(--tcf-bg-dark);
+    background: rgba(26, 31, 26, 0.95) !important;
     border-bottom: 2px solid var(--tcf-border);
     padding: 20px 0;
     margin-bottom: 20px;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
 }
 
 .tcf-header .tcf-brand-container {
@@ -389,12 +394,14 @@ a:hover {
     margin: 4px 0 0 0;
 }
 
-/* Footer */
+/* === Footer === */
 .tcf-footer {
     margin-top: 60px;
     padding: 30px 0;
     border-top: 1px solid var(--tcf-border);
-    background: rgba(20, 25, 20, 0.8);
+    background: rgba(20, 25, 20, 0.95) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
 }
 
 .tcf-footer-text {
@@ -403,7 +410,7 @@ a:hover {
     margin: 0;
 }
 
-/* Background principal avec site_shot1.jpg */
+/* === Background et images === */
 .tcf-hero-bg {
     background-image: url('../images/site_shot1.jpg');
     background-size: cover;
@@ -428,7 +435,6 @@ a:hover {
     z-index: 2;
 }
 
-/* Images de contenu */
 .tcf-feature-image {
     width: 100%;
     height: 200px;
@@ -443,17 +449,14 @@ a:hover {
     transform: scale(1.02);
 }
 
-/* Sections avec images */
-.tcf-gallery-section {
-    margin: 32px 0;
-    padding: 24px;
-    background: rgba(96, 139, 78, 0.1);
-    border: 1px solid var(--tcf-border);
-    border-radius: 12px;
-    backdrop-filter: blur(2px);
+/* === Fix blur définitif === */
+.tcf-landing .tcf-header,
+.tcf-landing .tcf-footer {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
 }
 
-/* Responsive pour les grilles d'images */
+/* === Responsive pour images === */
 @media (max-width: 768px) {
     .tcf-gallery-section > div[style*="grid-template-columns"] {
         display: block !important;
@@ -467,4 +470,44 @@ a:hover {
     .tcf-hero-bg {
         background-attachment: scroll;
     }
+}
+
+/* Fix blur ultra-spécifique - à ajouter à la fin */
+body .tcf-landing .tcf-header,
+html body .tcf-landing .tcf-header,
+.tcf-landing div.tcf-header {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+body .tcf-landing .tcf-footer,
+html body .tcf-landing .tcf-footer,
+.tcf-landing div.tcf-footer {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+/* Si ça ne marche toujours pas, règle globale brutale */
+.tcf-header *,
+.tcf-footer * {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+/* Fix blur webkit - spécificité maximale */
+div[class="tcf-header"] {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+}
+
+div[class="tcf-footer"] {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+}
+
+/* Alternative avec ID temporaire */
+.tcf-header,
+#tcf-override .tcf-header {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
 }
