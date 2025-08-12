@@ -1,0 +1,183 @@
+/* TCF Landing Page - Styles spécifiques à la landing page */
+
+/* === Landing Page Layout === */
+.tcf-landing {
+    min-height: calc(100vh - 120px);
+    padding: 0;
+}
+
+.tcf-main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 40px;
+    align-items: start;
+}
+
+/* === Background Hero === */
+.tcf-hero-bg {
+    background-image: url('../images/site_shot1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+/* Overlay plus léger pour ne pas assombrir header/footer */
+.tcf-hero-bg::before {
+    content: '';
+    position: absolute;
+    top: 120px; /* Commence après le header */
+    left: 0;
+    right: 0;
+    bottom: 120px; /* S'arrête avant le footer */
+    background: rgba(26, 31, 26, 0.6); /* Plus léger */
+    z-index: 1;
+}
+
+.tcf-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* === Section héroïque === */
+.tcf-hero-section {
+    padding: 20px 0;
+}
+
+.tcf-hero-title {
+    font-size: 36px;
+    color: var(--tcf-green-light);
+    margin-bottom: 16px;
+    font-weight: bold;
+}
+
+.tcf-hero-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--tcf-text-secondary);
+    margin-bottom: 32px;
+}
+
+/* === Header personnalisé pour la landing page === */
+.tcf-header {
+    background: rgba(26, 31, 26, 0.95);
+    border-bottom: 2px solid var(--tcf-border);
+    padding: 20px 0;
+    margin-bottom: 20px;
+    /* Pas de blur */
+}
+
+.tcf-header .tcf-brand-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+}
+
+.tcf-header .tcf-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    border: 1px solid var(--tcf-border);
+    padding: 8px;
+    background: transparent;
+    object-fit: contain;
+}
+
+.tcf-header .tcf-logo-fallback {
+    display: none;
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    border: 1px solid var(--tcf-border);
+    background: linear-gradient(45deg, rgba(96, 139, 78, 0.2), rgba(86, 182, 194, 0.2));
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--tcf-green-light);
+}
+
+.tcf-header .tcf-title {
+    font-size: 28px;
+    color: var(--tcf-green-light);
+    font-weight: bold;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin: 0;
+}
+
+.tcf-header .tcf-subtitle {
+    font-size: 16px;
+    color: var(--tcf-cyan-primary);
+    opacity: 0.9;
+    margin: 4px 0 0 0;
+}
+
+/* === Footer === */
+.tcf-footer {
+    margin-top: 60px;
+    padding: 30px 0;
+    border-top: 1px solid var(--tcf-border);
+    background: rgba(20, 25, 20, 0.95);
+    /* Pas de blur */
+}
+
+.tcf-footer-text {
+    color: rgba(212, 212, 212, 0.6);
+    font-size: 12px;
+    margin: 0;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+    .tcf-main-content {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .tcf-registration-form {
+        position: static;
+    }
+
+    .tcf-hero-title {
+        font-size: 28px;
+    }
+
+    .tcf-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tcf-brand-container {
+        gap: 12px;
+    }
+
+    .tcf-title {
+        font-size: 16px;
+    }
+
+    .tcf-subtitle {
+        font-size: 10px;
+    }
+    
+    .tcf-gallery-section > div[style*="grid-template-columns"] {
+        display: block !important;
+    }
+    
+    .tcf-feature-image {
+        height: 150px;
+        margin: 16px 0;
+    }
+    
+    .tcf-hero-bg {
+        background-attachment: scroll;
+    }
+    
+    /* Overlay mobile adapté */
+    .tcf-hero-bg::before {
+        top: 100px;
+        bottom: 100px;
+    }
+}

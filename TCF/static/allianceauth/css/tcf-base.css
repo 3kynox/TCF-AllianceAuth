@@ -1,0 +1,69 @@
+/* TCF Base - Styles de base et variables */
+/* Palette: Vert #608b4e / #7cb668, Cyan #56b6c2 / #70c9d4, Background rgba(26, 31, 26, 0.85) */
+
+/* Import du fix Bootstrap 3 */
+@import url('bootstrap3-fix.css');
+
+/* === Variables globales === */
+:root {
+    --tcf-green-primary: #608b4e;
+    --tcf-green-light: #7cb668;
+    --tcf-cyan-primary: #56b6c2;
+    --tcf-cyan-light: #70c9d4;
+    --tcf-bg-dark: rgba(26, 31, 26, 0.85);
+    --tcf-bg-darker: rgba(20, 25, 20, 0.9);
+    --tcf-text-primary: #d4d4d4;
+    --tcf-text-secondary: rgba(212, 212, 212, 0.8);
+    --tcf-border: rgba(96, 139, 78, 0.3);
+    --tcf-font-mono: 'DejaVu Sans Mono', 'Courier New', monospace;
+}
+
+/* === Override du body principal === */
+body {
+    background: linear-gradient(135deg, var(--tcf-bg-dark) 0%, var(--tcf-bg-darker) 100%);
+    color: var(--tcf-text-primary);
+    font-family: var(--tcf-font-mono);
+    min-height: 100vh;
+}
+
+/* === Override liens généraux === */
+a {
+    color: var(--tcf-cyan-primary);
+}
+
+a:hover {
+    color: var(--tcf-cyan-light);
+}
+
+/* === Override navbar Bootstrap === */
+.navbar-dark {
+    background: var(--tcf-bg-dark) !important;
+    border-bottom: 2px solid var(--tcf-border);
+}
+
+.navbar-brand {
+    padding: 8px 0;
+}
+
+/* === Override cards Bootstrap === */
+.card {
+    background: var(--tcf-bg-dark);
+    border: 1px solid var(--tcf-border);
+    color: var(--tcf-text-primary);
+}
+
+.card-header {
+    background: rgba(96, 139, 78, 0.1);
+    border-bottom: 1px solid var(--tcf-border);
+}
+
+/* === Override boutons === */
+.btn-primary {
+    background: linear-gradient(135deg, var(--tcf-green-primary) 0%, var(--tcf-green-light) 100%);
+    border-color: var(--tcf-green-primary);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--tcf-green-light) 0%, var(--tcf-green-primary) 100%);
+    border-color: var(--tcf-green-light);
+}
