@@ -1,0 +1,322 @@
+/* TCF Overrides - Surcharges spécifiques pour AllianceAuth */
+
+/* === Override des modals Bootstrap === */
+.modal-content {
+    background: var(--tcf-bg-dark);
+    border: 1px solid var(--tcf-border);
+    color: var(--tcf-text-primary);
+}
+
+.modal-header {
+    background: rgba(96, 139, 78, 0.1);
+    border-bottom: 1px solid var(--tcf-border);
+}
+
+.modal-title {
+    color: var(--tcf-green-light);
+}
+
+.modal-footer {
+    border-top: 1px solid var(--tcf-border);
+}
+
+.btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+/* === Override des formulaires === */
+.form-control,
+.form-select {
+    background: rgba(26, 31, 26, 0.6);
+    border: 1px solid var(--tcf-border);
+    color: var(--tcf-text-primary);
+}
+
+.form-control:focus,
+.form-select:focus {
+    background: rgba(26, 31, 26, 0.8);
+    border-color: var(--tcf-cyan-primary);
+    box-shadow: 0 0 0 0.2rem rgba(86, 182, 194, 0.25);
+    color: var(--tcf-text-primary);
+}
+
+.form-control::placeholder {
+    color: rgba(212, 212, 212, 0.5);
+}
+
+.form-label {
+    color: var(--tcf-green-light);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.form-text {
+    color: var(--tcf-text-secondary);
+    font-size: 12px;
+}
+
+.input-group-text {
+    background: rgba(96, 139, 78, 0.15);
+    border: 1px solid var(--tcf-border);
+    color: var(--tcf-cyan-primary);
+}
+
+/* === Override des tooltips === */
+.tooltip-inner {
+    background: rgba(26, 31, 26, 0.95);
+    border: 1px solid var(--tcf-border);
+    color: var(--tcf-text-primary);
+}
+
+.bs-tooltip-top .tooltip-arrow::before {
+    border-top-color: var(--tcf-border);
+}
+
+.bs-tooltip-end .tooltip-arrow::before {
+    border-right-color: var(--tcf-border);
+}
+
+.bs-tooltip-bottom .tooltip-arrow::before {
+    border-bottom-color: var(--tcf-border);
+}
+
+.bs-tooltip-start .tooltip-arrow::before {
+    border-left-color: var(--tcf-border);
+}
+
+/* === Override des popovers === */
+.popover {
+    background: var(--tcf-bg-dark);
+    border: 1px solid var(--tcf-border);
+}
+
+.popover-header {
+    background: rgba(96, 139, 78, 0.1);
+    border-bottom: 1px solid var(--tcf-border);
+    color: var(--tcf-green-light);
+}
+
+.popover-body {
+    color: var(--tcf-text-primary);
+}
+
+/* === Override des progress bars === */
+.progress {
+    background: rgba(26, 31, 26, 0.6);
+    border: 1px solid var(--tcf-border);
+    height: 20px;
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, var(--tcf-green-primary) 0%, var(--tcf-green-light) 100%);
+}
+
+.progress-bar-striped {
+    background-image: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.15) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255, 255, 255, 0.15) 50%,
+        rgba(255, 255, 255, 0.15) 75%,
+        transparent 75%,
+        transparent
+    );
+}
+
+/* === Override des badges === */
+.badge {
+    font-weight: 600;
+    padding: 0.35em 0.65em;
+}
+
+.bg-primary {
+    background: var(--tcf-green-primary) !important;
+}
+
+.bg-info {
+    background: var(--tcf-cyan-primary) !important;
+}
+
+.bg-success {
+    background: #27ae60 !important;
+}
+
+.bg-warning {
+    background: #f39c12 !important;
+}
+
+.bg-danger {
+    background: #e74c3c !important;
+}
+
+/* === Override des tabs === */
+.nav-tabs {
+    border-bottom: 1px solid var(--tcf-border);
+}
+
+.nav-tabs .nav-link {
+    color: var(--tcf-text-secondary);
+    background: transparent;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.nav-tabs .nav-link:hover {
+    color: var(--tcf-cyan-light);
+    border-color: var(--tcf-border) var(--tcf-border) transparent;
+    background: rgba(86, 182, 194, 0.05);
+}
+
+.nav-tabs .nav-link.active {
+    color: var(--tcf-green-light);
+    background: var(--tcf-bg-dark);
+    border-color: var(--tcf-border) var(--tcf-border) var(--tcf-bg-dark);
+}
+
+/* === Override des accordions === */
+.accordion-item {
+    background: var(--tcf-bg-dark);
+    border: 1px solid var(--tcf-border);
+    margin-bottom: 8px;
+}
+
+.accordion-button {
+    background: rgba(96, 139, 78, 0.1);
+    color: var(--tcf-green-light);
+}
+
+.accordion-button:not(.collapsed) {
+    background: rgba(96, 139, 78, 0.2);
+    color: var(--tcf-green-light);
+    box-shadow: none;
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.2rem rgba(96, 139, 78, 0.25);
+}
+
+.accordion-button::after {
+    filter: brightness(0) saturate(100%) invert(62%) sepia(11%) saturate(1479%) hue-rotate(51deg) brightness(93%) contrast(87%);
+}
+
+.accordion-body {
+    background: rgba(26, 31, 26, 0.4);
+    color: var(--tcf-text-primary);
+}
+
+/* === Override des pagination === */
+.pagination {
+    --bs-pagination-bg: rgba(26, 31, 26, 0.6);
+    --bs-pagination-border-color: var(--tcf-border);
+    --bs-pagination-color: var(--tcf-text-secondary);
+    --bs-pagination-hover-bg: rgba(86, 182, 194, 0.1);
+    --bs-pagination-hover-color: var(--tcf-cyan-light);
+    --bs-pagination-hover-border-color: var(--tcf-cyan-primary);
+    --bs-pagination-active-bg: var(--tcf-green-primary);
+    --bs-pagination-active-border-color: var(--tcf-green-primary);
+    --bs-pagination-disabled-bg: rgba(26, 31, 26, 0.3);
+    --bs-pagination-disabled-color: rgba(212, 212, 212, 0.3);
+}
+
+/* === Override des list groups === */
+.list-group-item {
+    background: rgba(26, 31, 26, 0.6);
+    border: 1px solid var(--tcf-border);
+    color: var(--tcf-text-primary);
+}
+
+.list-group-item:hover {
+    background: rgba(86, 182, 194, 0.1);
+}
+
+.list-group-item.active {
+    background: var(--tcf-green-primary);
+    border-color: var(--tcf-green-primary);
+}
+
+/* === Override des offcanvas === */
+.offcanvas {
+    background: var(--tcf-bg-dark);
+    border: 1px solid var(--tcf-border);
+}
+
+.offcanvas-header {
+    border-bottom: 1px solid var(--tcf-border);
+}
+
+.offcanvas-title {
+    color: var(--tcf-green-light);
+}
+
+/* === DataTables specific overrides === */
+.dataTables_wrapper {
+    color: var(--tcf-text-primary);
+}
+
+.dataTables_wrapper .dataTables_length select,
+.dataTables_wrapper .dataTables_filter input {
+    background: rgba(26, 31, 26, 0.6);
+    border: 1px solid var(--tcf-border);
+    color: var(--tcf-text-primary);
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    color: var(--tcf-text-secondary) !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background: rgba(86, 182, 194, 0.1);
+    border-color: var(--tcf-cyan-primary);
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background: var(--tcf-green-primary);
+    border-color: var(--tcf-green-primary);
+    color: white !important;
+}
+
+.dataTables_wrapper .dataTables_info {
+    color: var(--tcf-text-secondary);
+}
+
+table.dataTable thead th {
+    border-bottom: 2px solid var(--tcf-border);
+}
+
+table.dataTable tbody tr {
+    background: rgba(26, 31, 26, 0.4);
+}
+
+table.dataTable tbody tr:hover {
+    background: rgba(86, 182, 194, 0.1);
+}
+
+table.dataTable tbody td {
+    border-color: rgba(96, 139, 78, 0.1);
+}
+
+/* === Select2 specific overrides === */
+.select2-container--default .select2-selection--single,
+.select2-container--default .select2-selection--multiple {
+    background: rgba(26, 31, 26, 0.6);
+    border: 1px solid var(--tcf-border);
+    color: var(--tcf-text-primary);
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: var(--tcf-text-primary);
+}
+
+.select2-dropdown {
+    background: var(--tcf-bg-dark);
+    border: 1px solid var(--tcf-border);
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+    background: rgba(86, 182, 194, 0.2);
+}
+
+.select2-container--default .select2-results__option[aria-selected=true] {
+    background: rgba(96, 139, 78, 0.2);
+}
