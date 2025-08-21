@@ -93,10 +93,7 @@
                                     <i class="fas fa-building"></i> Corporation
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" temp=" url 'eveonline:list' " href=#>
-                                        <i class="fas fa-users"></i> Membres
-                                    </a></li>
-                                    <li><a class="dropdown-item" temp=" url 'groups:groups' " href="#">
+                                    <li><a class="dropdown-item" href="/groups/">
                                         <i class="fas fa-layer-group"></i> Groupes
                                     </a></li>
                                 </ul>
@@ -110,13 +107,13 @@
                                 <a class="nav-link dropdown-toggle p-0" href="#" data-bs-toggle="dropdown">
                                     <div class="tcf-character-selector">
                                         {% if request.user.profile.main_character %}
-                                            <img src="{{ request.user.profile.main_character.portrait_url_32 }}" 
-                                                 class="tcf-character-portrait" 
-                                                 alt="{{ request.user.profile.main_character.character_name }}">
                                             <div class="tcf-character-info d-none d-lg-block">
                                                 <span class="tcf-character-name">{{ request.user.profile.main_character.character_name }}</span>
                                                 <span class="tcf-character-corp">{{ request.user.profile.main_character.corporation_name }}</span>
                                             </div>
+                                            <img src="{{ request.user.profile.main_character.portrait_url_32 }}" 
+                                                class="tcf-character-portrait" 
+                                                alt="{{ request.user.profile.main_character.character_name }}">
                                         {% else %}
                                             <i class="fas fa-user-circle fa-2x text-muted"></i>
                                         {% endif %}
@@ -128,8 +125,8 @@
                                     <li><a class="dropdown-item" href="#">
                                         <i class="fas fa-user"></i> Mon Profil
                                     </a></li>
-                                    <li><a class="dropdown-item" href="#">
-                                        <i class="fas fa-users-cog"></i> Mes Personnages
+                                    <li><a class="dropdown-item" href="/groupmanagement/requests/">
+                                        <i class="fas fa-users-cog"></i> Gestion Groupes
                                     </a></li>
                                     {% if user.is_staff %}
                                         <li><hr class="dropdown-divider"></li>
@@ -138,7 +135,7 @@
                                         </a></li>
                                     {% endif %}
                                     <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="#">
+                                    <li><a class="dropdown-item" href="/account/logout/">
                                         <i class="fas fa-sign-out-alt"></i> Déconnexion
                                     </a></li>
                                 </ul>
@@ -172,12 +169,11 @@
                                     <span class="tcf-sidebar-menu-text">Accueil</span>
                                 </a>
                             </li>
-                            
+
                             <li class="tcf-sidebar-menu-item">
-                                <a href="#" 
-                                   class="tcf-sidebar-menu-link">
-                                    <i class="fas fa-user-astronaut tcf-sidebar-menu-icon"></i>
-                                    <span class="tcf-sidebar-menu-text">Personnages</span>
+                                <a href="/groups/" class="tcf-sidebar-menu-link">
+                                    <i class="fas fa-layer-group tcf-sidebar-menu-icon"></i>
+                                    <span class="tcf-sidebar-menu-text">Groupes</span>
                                 </a>
                             </li>
                             

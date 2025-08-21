@@ -11,7 +11,7 @@
 .tcf-content-wrapper {
     flex: 1;
     display: flex;
-    padding-top: 80px; /* Espace pour la navbar fixe */
+    padding-top: 80px;
 }
 
 /* === Navbar personnalisée === */
@@ -228,8 +228,6 @@
 
 /* === Dashboard widgets === */
 .tcf-dashboard-widgets {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
 }
 
@@ -406,6 +404,10 @@
         z-index: 1020;
         transition: left 0.3s ease;
     }
+
+    .tcf-content-wrapper {
+        padding-top: 80px;
+    }
     
     .tcf-sidebar.show {
         left: 0;
@@ -419,6 +421,12 @@
     
     .tcf-main-content {
         margin-left: 0;
+        padding: 16px;
+        padding-top: 24px;
+    }
+
+    .tcf-page-title {
+        padding-top: 20px;
     }
     
     .tcf-dashboard-widgets {
@@ -437,5 +445,25 @@
     
     .tcf-page-title {
         font-size: 20px;
+        padding-top: 20px;
     }
+}
+
+.tcf-dashboard-widgets {
+    max-width: 100%;
+    margin: 0;
+}
+
+/* === Repositionner flèche dropdown du menu user à droite === */
+.nav-link.dropdown-toggle.p-0 {
+    position: relative;
+}
+
+.nav-link.dropdown-toggle.p-0::after {
+    position: absolute;
+    right: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 0;
+    margin-right: 3px;
 }

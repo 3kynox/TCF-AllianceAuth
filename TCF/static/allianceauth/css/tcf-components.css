@@ -215,3 +215,25 @@
 .tcf-feature-image:hover {
     transform: scale(1.02);
 }
+
+.tcf-character-info {
+    text-align: right;
+    max-width: 200px;
+    overflow: hidden;
+}
+
+.tcf-character-name {
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+}
+
+.tcf-character-corp {
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+}
