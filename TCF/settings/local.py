@@ -35,6 +35,7 @@ DEBUG = True
 # Add any additional apps to this list.
 INSTALLED_APPS += [
     #'allianceauth.theme.bootstrap',
+    'allianceauth.services.modules.discord',
 ]
 
 # To change the logging level for extensions, uncomment the following line.
@@ -122,3 +123,15 @@ CSRF_TRUSTED_ORIGINS = [
     'https://www.taucetifederation.space',
 ]
 
+# Configuration Discord
+DISCORD_GUILD_ID = os.getenv('DISCORD_GUILD_ID')
+DISCORD_CALLBACK_URL = f"{SITE_URL}/discord/callback/"
+DISCORD_APP_ID = os.getenv('DISCORD_APP_ID')
+DISCORD_APP_SECRET = os.getenv('DISCORD_APP_SECRET')
+DISCORD_BOT_TOKEN = os.getenv('DISCORD_BOT_TOKEN')
+DISCORD_SYNC_NAMES = False
+
+CELERYBEAT_SCHEDULE['discord.update_all_usernames'] = {
+    'task': 'discord.update_all_usernames',
+    'schedule': crontab(minute='0', hour='*/12'),
+}
